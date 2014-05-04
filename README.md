@@ -1,4 +1,4 @@
 PixelPattern
 ============
 
-Apply pattern to your Pixel Art
+Apply patterns to your Pixel Art
