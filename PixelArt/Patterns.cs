@@ -102,6 +102,14 @@ namespace PixelArt
         new int[] {1, 3, 3, 3},
         new int[] {1, 0, 0, 3},
         new int[] {1, 1, 1, 0}
-        };      
+        };
+
+        public static readonly int[][] INSIDE_5x5 = new int[][] {
+        new int[] {1, 1, 1, 0, 0},
+        new int[] {1, 0, 1, 0, 0},
+        new int[] {1, 1, 1, 0, 0},
+        new int[] {0, 0, 0, 0, 0},
+        new int[] {0, 0, 0, 0, 0}
+        }; 
     }
 }
