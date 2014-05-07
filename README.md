@@ -1,4 +1,6 @@
 PixelPattern
 ============
 
-Apply patterns to your Pixel Art
+Apply patterns to your Pixel Art.
+
+Made with MonoGame.
