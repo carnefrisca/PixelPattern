@@ -24,6 +24,7 @@ namespace PixelArt
         private Texture2D square;
         private Texture2D background;
         FontRenderer _fontRenderer;
+        KeyboardState oldState;
 
         public Game1()
             : base()
@@ -96,41 +97,48 @@ namespace PixelArt
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            if (state.IsKeyDown(Keys.D1))
+            UpdatePatternByInput();
+
+            base.Update(gameTime);
+        }
+
+        private void UpdatePatternByInput()
+        {
+            KeyboardState newState = Keyboard.GetState();
+
+
+            if (newState.IsKeyDown(Keys.D1) || newState.IsKeyDown(Keys.NumPad1))
             {
                 square = new Texture2D(GraphicsDevice, 1, 2);
                 square.CreatePattern(Patterns.HORIZONTAL, new Color[] { Color.Transparent, Color.Black });
             }
-            if (state.IsKeyDown(Keys.D2))
+            if (newState.IsKeyDown(Keys.D2) || newState.IsKeyDown(Keys.NumPad2))
             {
                 square = new Texture2D(GraphicsDevice, 2, 1);
                 square.CreatePattern(Patterns.VERTICAL, new Color[] { Color.Transparent, Color.Black });
             }
-            if (state.IsKeyDown(Keys.D3))
+            if (newState.IsKeyDown(Keys.D3) || newState.IsKeyDown(Keys.NumPad3))
             {
                 square = new Texture2D(GraphicsDevice, 3, 3);
                 square.CreatePattern(Patterns.DIAGONAL3x3, new Color[] { Color.Transparent, Color.Black });
             }
-            if (state.IsKeyDown(Keys.D4))
+            if (newState.IsKeyDown(Keys.D4) || newState.IsKeyDown(Keys.NumPad4))
             {
                 square = new Texture2D(GraphicsDevice, 4, 4);
                 square.CreatePattern(Patterns.DIAGONAL_4x4, new Color[] { Color.Transparent, Color.Black });
             }
-            if (state.IsKeyDown(Keys.D5))
+            if (newState.IsKeyDown(Keys.D5) || newState.IsKeyDown(Keys.NumPad5))
             {
                 square = new Texture2D(GraphicsDevice, 4, 4);
-                square.CreatePattern(Patterns.DIAG_LIGHT_LEFT_4x4, new Color[] { 
+                square.CreatePattern(Patterns.DIAG_LIGHT_LEFT_4x4, new Color[] {
                     PatternManager.ToColor("121212"),
                     PatternManager.ToColor("3e3e3e"),
                     PatternManager.ToColor("696969"),
                     PatternManager.ToColor("c0c0c0"),
                     PatternManager.ToColor("e0e0e0"),
                     PatternManager.ToColor("efefef"),
-                Color.Transparent });
+                    Color.Transparent });
             }
-            // TODO: Add your update logic here
-
-            base.Update(gameTime);
         }
 
         public static FontFile Load(Stream stream)
