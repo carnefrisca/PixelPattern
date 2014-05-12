@@ -104,12 +104,18 @@ namespace PixelArt
         new int[] {1, 1, 1, 0}
         };
 
-        public static readonly int[][] INSIDE_5x5 = new int[][] {
-        new int[] {1, 1, 1, 0, 0},
-        new int[] {1, 0, 1, 0, 0},
-        new int[] {1, 1, 1, 0, 0},
-        new int[] {0, 0, 0, 0, 0},
-        new int[] {0, 0, 0, 0, 0}
+        public static readonly int[][] BOH = new int[][] {
+        new int[] {1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+        new int[] {0, 1, 2, 0, 0, 0, 0, 0, 0, 1, 0},
+        new int[] {0, 0, 1, 2, 0, 0, 0, 0, 1, 0, 0},
+        new int[] {0, 0, 0, 1, 2, 0, 0, 1, 0, 0, 0},
+        new int[] {0, 0, 0, 0, 1, 2, 1, 0, 0, 0, 0},
+        new int[] {0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0},
+        new int[] {0, 0, 0, 0, 1, 0, 1, 2, 0, 0, 0},
+        new int[] {0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0},
+        new int[] {0, 0, 1, 0, 0, 0, 0, 0, 1, 2, 0},
+        new int[] {0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2},
+        new int[] {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}
         }; 
     }
 }
