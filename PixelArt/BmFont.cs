@@ -1,16 +1,14 @@
-﻿// ---- AngelCode BmFont XML serializer ----------------------
-// ---- By DeadlyDan @ deadlydan@gmail.com -------------------
-// ---- There's no license restrictions, use as you will. ----
-// ---- Credits to http://www.angelcode.com/ -----------------
-
-using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Xml.Serialization;
-
-namespace BmFont
+﻿namespace BmFont
 {
+    using Microsoft.Xna.Framework;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Xml.Serialization;
+
+    /// <summary>
+    /// Font Class
+    /// </summary>
     [Serializable]
     [XmlRoot("font")]
     public class FontFile
@@ -128,6 +126,7 @@ namespace BmFont
             {
                 return _Padding.X + "," + _Padding.Y + "," + _Padding.Width + "," + _Padding.Height;
             }
+
             set
             {
                 String[] padding = value.Split(',');
@@ -143,6 +142,7 @@ namespace BmFont
             {
                 return _Spacing.X + "," + _Spacing.Y;
             }
+
             set
             {
                 String[] spacing = value.Split(',');

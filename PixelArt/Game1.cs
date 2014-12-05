@@ -1,19 +1,17 @@
-﻿#region Using Statements
-using System;
-using System.Collections.Generic;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Storage;
-using Microsoft.Xna.Framework.GamerServices;
-using System.Xml.Serialization;
-using BmFont;
-using System.IO;
-#endregion
-
-namespace PixelArt
+﻿namespace PixelArt
 {
+    using BmFont;
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Content;
+    using Microsoft.Xna.Framework.GamerServices;
+    using Microsoft.Xna.Framework.Graphics;
+    using Microsoft.Xna.Framework.Input;
+    using Microsoft.Xna.Framework.Storage;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Xml.Serialization;
+
     /// <summary>
     /// This is the main type for your game
     /// </summary>
@@ -24,9 +22,10 @@ namespace PixelArt
         private Texture2D square;
         private Texture2D background;
         FontRenderer _fontRenderer;
-        KeyboardState oldState;
+        ////KeyboardState oldState;
         string windowTitle = "Pixel Pattern";
         string PatternType = "";
+
         public Game1()
             : base()
         {
@@ -90,7 +89,9 @@ namespace PixelArt
             KeyboardState state = Keyboard.GetState();
 
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            {
                 Exit();
+            }
 
             UpdatePatternByInput();
 
@@ -127,8 +128,7 @@ namespace PixelArt
                 square = new Texture2D(GraphicsDevice, 4, 4);
                 square.CreatePattern(Patterns.DIAGONAL_4x4, new Color[] { Color.Transparent, Color.Black });
             }
-            if (newState.IsKeyDown(Keys.D5) || newState.IsKeyDown(Keys.NumPad5))
-            {
+            if (newState.IsKeyDown(Keys.D5) || newState.IsKeyDown(Keys.NumPad5)) {
                 PatternType = "DIAG_LIGHT_LEFT_4x4";
                 square = new Texture2D(GraphicsDevice, 4, 4);
                 square.CreatePattern(Patterns.DIAG_LIGHT_LEFT_4x4, new Color[] {
@@ -141,21 +141,28 @@ namespace PixelArt
                     PatternManager.ToColor("efefef"),
                 });
             }
-            if (newState.IsKeyDown(Keys.D6) || newState.IsKeyDown(Keys.NumPad6))
-            {
-                PatternType = "BOH";
-                square = new Texture2D(GraphicsDevice, 11, 11);
-                square.CreatePattern(Patterns.BOH, new Color[] { Color.Transparent, Color.Black, Color.Red });
+            if (newState.IsKeyDown(Keys.D6) || newState.IsKeyDown(Keys.NumPad6)) {
+                PatternType = "LIGHT_TOP_4x4";
+                square = new Texture2D(GraphicsDevice, 4, 4);
+                square.CreatePattern(Patterns.LIGHT_TOP_4x4, new Color[] { 
+                Color.Transparent,
+                PatternManager.ToColor("FFdfdfdf"),
+                PatternManager.ToColor("FFc9c9c9"),
+                PatternManager.ToColor("FF9f9f9f"),
+                PatternManager.ToColor("FFffffff"),
+                PatternManager.ToColor("FFeaeaea"), 
+                PatternManager.ToColor("FFbebebe"),
+                PatternManager.ToColor("FF6a6a6a")
+                });
             }
-            if (newState.IsKeyDown(Keys.D7) || newState.IsKeyDown(Keys.NumPad7))
-            {
+            if (newState.IsKeyDown(Keys.D7) || newState.IsKeyDown(Keys.NumPad7)) {
                 PatternType = "LIGHT_4x4";
                 square = new Texture2D(GraphicsDevice, 4, 4);
                 square.CreatePattern(Patterns.LIGHT_4x4, new Color[] {
                     Color.Transparent,
                     PatternManager.ToColor("FF7f7f7f"),
-                     PatternManager.ToColor("FF404040"),
-                      PatternManager.ToColor("FFbfbfbf")
+                    PatternManager.ToColor("FF404040"),
+                    PatternManager.ToColor("FFbfbfbf")
                 });
             }
         }

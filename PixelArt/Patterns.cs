@@ -1,59 +1,56 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace PixelArt
+﻿namespace PixelArt
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+
     static class Patterns
     {
-        public static readonly int[][] HORIZONTAL = new int[][] 
-        {
-        new int[] { 1 },
-        new int[] { 0 }
+        public static readonly int[][] HORIZONTAL = new int[][] {
+        new int[]{1},
+        new int[]{0}
         };
  
-        public static readonly int[][] VERTICAL = new int[][] 
-        {
+        public static readonly int[][] VERTICAL = new int[][] {
         new int[] { 1, 0}
         };
  
         public static readonly int[][] DIAGONAL3x3 = new int[][] {
-        new int[] { 1, 0, 0},
-        new int[] { 0, 0, 1},
-        new int[] { 0, 1, 0}
+        new int[]{1, 0, 0},
+        new int[]{0, 0, 1},
+        new int[]{0, 1, 0}
         };  
 
-        public static readonly int[][] DIAGONAL_4x4 = new int[][] 
-        {
-        new int[] { 0, 1, 0, 0 },
-        new int[] { 1, 0, 0, 0 }, 
-        new int[] { 0, 0, 0, 1 }, 
-        new int[] { 0, 0, 1, 0 }
+        public static readonly int[][] DIAGONAL_4x4 = new int[][] {
+        new int[]{0, 1, 0, 0},
+        new int[]{1, 0, 0, 0}, 
+        new int[]{0, 0, 0, 1}, 
+        new int[]{0, 0, 1, 0}
         };
 
         public static readonly int[][] STAR_5x5 = new int[][] {
-        new int[] {0, 0, 0, 0, 0},
-        new int[] {0, 0, 1, 0, 0},
-        new int[] {0, 1, 0, 1, 0},
-        new int[] {0, 0, 1, 0, 0},
-        new int[] {0, 0, 0, 0, 0}
+        new int[]{0, 0, 0, 0, 0},
+        new int[]{0, 0, 1, 0, 0},
+        new int[]{0, 1, 0, 1, 0},
+        new int[]{0, 0, 1, 0, 0},
+        new int[]{0, 0, 0, 0, 0}
         };      
  
         public static readonly int[][] SQUARE_5x5 = new int[][] {
-        new int[] {0, 1, 0, 1, 0},
-        new int[] {1, 1, 0, 1, 1},
-        new int[] {0, 0, 0, 0, 0},
-        new int[] {1, 1, 0, 1, 1},
-        new int[] {0, 1, 0, 1, 0}
+        new int[]{0, 1, 0, 1, 0},
+        new int[]{1, 1, 0, 1, 1},
+        new int[]{0, 0, 0, 0, 0},
+        new int[]{1, 1, 0, 1, 1},
+        new int[]{0, 1, 0, 1, 0}
         };  
  
         public static readonly int[][] CIRCLE_5x5 = new int[][] {
-        new int[] {0, 0, 1, 0, 0},
-        new int[] {0, 1, 0, 1, 0},
-        new int[] {1, 0, 0, 0, 1},
-        new int[] {0, 1, 0, 1, 0},
-        new int[] {0, 0, 1, 0, 0}
+        new int[]{0, 0, 1, 0, 0},
+        new int[]{0, 1, 0, 1, 0},
+        new int[]{1, 0, 0, 0, 1},
+        new int[]{0, 1, 0, 1, 0},
+        new int[]{0, 0, 1, 0, 0}
         };          
  
         public static readonly int[][] WAVE_5x5 = new int[][] {
@@ -103,19 +100,5 @@ namespace PixelArt
         new int[] {1, 0, 0, 3},
         new int[] {1, 1, 1, 0}
         };
-
-        public static readonly int[][] BOH = new int[][] {
-        new int[] {1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-        new int[] {0, 1, 2, 0, 0, 0, 0, 0, 0, 1, 0},
-        new int[] {0, 0, 1, 2, 0, 0, 0, 0, 1, 0, 0},
-        new int[] {0, 0, 0, 1, 2, 0, 0, 1, 0, 0, 0},
-        new int[] {0, 0, 0, 0, 1, 2, 1, 0, 0, 0, 0},
-        new int[] {0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0},
-        new int[] {0, 0, 0, 0, 1, 0, 1, 2, 0, 0, 0},
-        new int[] {0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0},
-        new int[] {0, 0, 1, 0, 0, 0, 0, 0, 1, 2, 0},
-        new int[] {0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2},
-        new int[] {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}
-        }; 
     }
 }
