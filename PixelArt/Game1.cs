@@ -22,7 +22,7 @@
         private Texture2D square;
         private Texture2D background;
         FontRenderer _fontRenderer;
-        ////KeyboardState oldState;
+        Rectangle rect;
         string windowTitle = "Pixel Pattern";
         string PatternType = "";
 
@@ -68,6 +68,8 @@
             graphics.PreferredBackBufferWidth = background.Width;
             graphics.PreferredBackBufferHeight = background.Height;
             graphics.ApplyChanges();
+
+            rect = new Rectangle(0, 0, graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight);
         }
 
         /// <summary>
@@ -182,9 +184,8 @@
         {
             GraphicsDevice.Clear(Color.White);
 
-            // TODO: Add your drawing code here
             spriteBatch.Begin();
-            spriteBatch.Draw(background, new Rectangle(0, 0, graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight), Color.White);
+            spriteBatch.Draw(background, rect, Color.White);
 
             for (int x = 0; x < graphics.PreferredBackBufferWidth; x++)
             {
